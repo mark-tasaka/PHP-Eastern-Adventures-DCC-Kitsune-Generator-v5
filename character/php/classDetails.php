@@ -315,43 +315,43 @@ function knownSpells($level)
     switch($level)
     {
         case 1:
-            $spells = 4;
+            $spells = 3;
         break;
 
         case 2:
-            $spells = 5;
+            $spells = 4;
         break;
         
         case 3:
-            $spells = 6;
+            $spells = 5;
         break;
         
         case 4:
-            $spells = 7;
+            $spells = 6;
         break;
 
         case 5:
-            $spells = 8;
+            $spells = 7;
         break;
         
         case 6:
-            $spells = 9;
+            $spells = 8;
         break;
         
         case 7:
-            $spells = 10;
+            $spells = 9;
         break;
 
         case 8:
-            $spells = 12;
+            $spells = 10;
         break;
         
         case 9:
-            $spells = 14;
+            $spells = 12;
         break;
         
         case 10:
-            $spells = 16;
+            $spells = 14;
         break;
 
         default:
@@ -396,32 +396,5 @@ function maxSpellLevel($level)
 }
 
 
-function titleEastern($level, $gender)
-{
-    $title = "";
 
-    if($level == 1)
-    {
-        $title = "Practitioner";
-    }
-    else if($level == 2)
-    {
-        $title = "Aesthetic";
-    }
-    else if($level == 3)
-    {
-        $title = "Way Seeker";
-    }
-    else if($level == 4)
-    {
-        $title = "Oracle";
-    }
-    else
-    {
-        $title = "Mystic";
-    }
-
-    return $title;
-
-}
 ?>

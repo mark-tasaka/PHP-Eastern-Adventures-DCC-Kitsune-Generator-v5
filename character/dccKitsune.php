@@ -248,7 +248,7 @@
 
         $generationMessage = generationMesssage ($abilityScoreGen);
     */
-    /*
+    
         if(isset($_POST["theArmour"]))
         {
             $armour = $_POST["theArmour"];
@@ -263,7 +263,7 @@
 
        $totalAcDefense = $armourACBonus;
        $totalAcCheckPen = $armourCheckPen;
-       $speedPenality = $armourSpeedPen;*/
+       $speedPenality = $armourSpeedPen;
 
        $speed = 30;
 
@@ -283,7 +283,7 @@
        
        $baseArmourClass = getAC($agilityMod, $luckMod, $luckySign[0]);
 
-       $armourClass = $baseArmourClass;
+       $armourClass = $baseArmourClass + $totalAcDefense;
 
        $ref = savingThrowReflex($level);
        $ref += $agilityMod;
@@ -752,6 +752,46 @@
                 echo $attackBonus;
            ?>
            </span>
+
+           
+              
+       <span id="armourName">
+           <?php
+                echo $armourName;
+           ?>
+        </span>
+
+        <span id="armourACBonus">
+            <?php
+                echo '+' . $totalAcDefense;
+            ?>
+        </span>
+
+        
+        <span id="armourACCheckPen">
+            <?php
+                echo $totalAcCheckPen;
+            ?>
+        </span>
+        
+        <span id="armourACSpeedPen">
+            <?php
+            if($speedPenality == 0)
+            {
+                echo "-";
+            }
+            else
+            {
+                echo "-" . $speedPenality;
+            }
+            ?>
+        </span>
+
+        <span id="fumbleDie">
+            <?php
+                echo $armourFumbleDie;
+            ?>
+        </span>
 
            <span id="patronName">
             <?php
