@@ -4,6 +4,18 @@ The Dungeon Crawl Classics Eastern Adventures Redux Kitsune Character Generator 
 
 -----------
 
+A live version of the Dungeon Crawl Classics Kitsune Character Generator is available at: 
+
+https://www.tasaka-games.com/dcc_ea/more/classes/kitsune/
+
+
+------------
+
+
+
+Update 1.02: 2022-06-16
+
+Link for live version of the Kitsune Generator added.  Updates to dccKitsune.php, kitsune.css, kitsune.png, classDetails.php, languages.php and weapons.php.
 
 
 Update 1.01: 2022-06-15
