@@ -99,6 +99,7 @@
     
         }
 
+        /*
         if(isset($_POST['theEasternTitle']) && $_POST['theEasternTitle'] == 1) 
         {
             $title = titleEastern($level, $gender);
@@ -106,7 +107,10 @@
         else
         {
             $title = title($level, $alignment);
-        } 
+        } */
+
+        
+        $title = title($level, $alignment);
 
         
 

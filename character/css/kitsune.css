@@ -71,7 +71,7 @@ body{
 #title{
     position:absolute;
     top: 163px;
-    left: 295px;
+    left: 235px;
 	font-size: 0.85em;
 }
 
@@ -79,7 +79,7 @@ body{
 #profession{
     position:absolute;
     top: 163px;
-    left: 450px;
+    left: 370px;
 	font-size: 0.85em;
 }
 
@@ -196,7 +196,7 @@ body{
 
 #wealth{
     position:absolute;
-    top: 875px;
+    top: 820px;
     left: 680px;
     font-size: 0.6em;
     width: 230px;
@@ -485,8 +485,8 @@ body{
 
 #languages{
     position:absolute;
-    top: 1000px;
-    left:  680px;
+    top: 1085px;
+    left:  410px;
     font-size: 0.8em;
     width: 240px;
 }

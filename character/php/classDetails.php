@@ -1,6 +1,6 @@
 <?php
 
-/*Wizard */
+/*Kitsune */
 
 function getHitPoints($level, $staminaMod)
 {
@@ -16,12 +16,12 @@ function getHitPoints($level, $staminaMod)
 
     for($i = 0; $i < $level; ++$i)
     {
-        $levelHP = rand(2, 4);
+        $levelHP = rand(3, 6);
         $levelHP += $staminaMod;
 
-        if($levelHP < 2)
+        if($levelHP < 3)
         {
-            $levelHP = 2;
+            $levelHP = 3;
         }
 
         $hitPoints += $levelHP ;
@@ -64,63 +64,68 @@ function savingThrowReflex($level)
 
 function savingThrowFort($level)
 {
-    $will = 0;
+    $fort = 0;
 
-    if($level >= 3 && $level <= 5)
+    if($level >= 1 && $level <= 3)
     {
-        $will = 1;
+        $fort = 1;
     }
     
-    if($level >= 6 && $level <= 8)
+    if($level >= 4 && $level <= 6)
     {
-        $will = 2;
+        $fort = 2;
     }
 
-    if($level >= 9)
+    if($level >= 7 && $level <= 9)
     {
-        $will = 3;
+        $fort = 3;
     }
 
-    return $will;
+    if($level >= 10)
+    {
+        $fort = 4;
+    }
+
+    return $fort;
 
 }
 
 
 function savingThrowWill($level)
 {
-    $fort = 0;
+    $will = 0;
     
     if($level >= 1 && $level <= 2)
     {
-        $fort = 1;
+        $will = 1;
     }
     
     if($level >= 3 && $level <= 4)
     {
-        $fort = 2;
+        $will = 2;
     }
     
     if($level == 5)
     {
-        $fort = 3;
+        $will = 3;
     }
     
     if($level >= 6 && $level <= 7)
     {
-        $fort = 4;
+        $will = 4;
     }
     
     if($level >= 8 && $level <= 9)
     {
-        $fort = 5;
+        $will = 5;
     }
     
     if($level >= 10)
     {
-        $fort = 6;
+        $will = 6;
     }
     
-    return $fort;
+    return $will;
 
 }
 
@@ -128,29 +133,34 @@ function criticalDie($level)
 {
     $critical = "";
 
-    if($level == 1 || $level == 2)
+    if($level == 1)
     {
-        $critical = "1d6/I";
+        $critical = "1d6/II";
     }
 
-    if($level == 3 || $level == 4)
+    if($level == 2 || $level == 3)
     {
-        $critical = "1d8/I";
+        $critical = "1d8/II";
     }
 
-    if($level == 5 || $level == 6)
+    if($level == 4 || $level == 5)
     {
-        $critical = "1d10/I";
+        $critical = "1d10/II";
     }
 
-    if($level == 7 || $level == 8)
+    if($level == 6 || $level == 7)
     {
-        $critical = "1d12/I";
+        $critical = "1d12/II";
     }
     
-    if($level == 9 || $level == 10)
+    if($level == 8 || $level == 9)
     {
-        $critical = "1d14/I";
+        $critical = "1d14/II";
+    }
+    
+    if($level == 10)
+    {
+        $critical = "1d16/II";
     }
 
     return $critical;
@@ -159,26 +169,26 @@ function criticalDie($level)
 
 function attackBonus($level)
 {
-    $attackBonus = 0;
+    $attackBonus = 1;
     
-    if($level >= 2 && $level <= 4)
-    {
-        $attackBonus = 1;
-    }
-
-    if($level == 5 || $level == 6)
+    if($level >= 3 && $level <= 4)
     {
         $attackBonus = 2;
     }
 
-    if($level == 7 || $level == 8)
+    if($level == 5 || $level == 6)
     {
         $attackBonus = 3;
     }
 
-    if($level == 9 || $level == 10)
+    if($level == 7 || $level == 8)
     {
         $attackBonus = 4;
+    }
+
+    if($level == 9 || $level == 10)
+    {
+        $attackBonus = 5;
     }
 
     return $attackBonus;
@@ -204,14 +214,9 @@ function actionDice($level)
         $actionDice = "1d20+1d16";
     }
 
-    if($level >= 7 && $level <= 9)
+    if($level >= 7 && $level <= 10)
     {
         $actionDice = "1d20+1d20";
-    }
-
-    if($level == 10)
-    {
-        $actionDice = "1d20+1d20+1d14";
     }
 
     return $actionDice;
@@ -229,23 +234,23 @@ function title($level, $alignment)
 
         if($level == 1)
         {
-            $title = "Evoker";
+            $title = "Conformist";
         }
         else if($level == 2)
         {
-            $title = "Controller";
+            $title = "Homebody";
         }
         else if($level == 3)
         {
-            $title = "Conjurer";
+            $title = "Formalist";
         }
         else if($level == 4)
         {
-            $title = "Summoner";
+            $title = "Traditionalist";
         }
         else
         {
-            $title = "Elementalist";
+            $title = "Conservative";
         }
 
     }
@@ -254,23 +259,23 @@ function title($level, $alignment)
     {
         if($level == 1)
         {
-            $title = "Astrologist";
+            $title = "Changeling";
         }
         else if($level == 2)
         {
-            $title = "Enchanter";
+            $title = "Spell Seeker";
         }
         else if($level == 3)
         {
-            $title = "Magician";
+            $title = "Spell Weaver";
         }
         else if($level == 4)
         {
-            $title = "Thaumaturgist";
+            $title = "Pathfinder";
         }
         else
         {
-            $title = "Sorcerer";
+            $title = "Way Seeker";
         }
     }
 
@@ -278,23 +283,23 @@ function title($level, $alignment)
     {
         if($level == 1)
         {
-            $title = "Cultist";
+            $title = "Nonconformist";
         }
         else if($level == 2)
         {
-            $title = "Shaman";
+            $title = "Trickster";
         }
         else if($level == 3)
         {
-            $title = "Diabolist";
+            $title = "Prankster";
         }
         else if($level == 4)
         {
-            $title = "Warlock/Witch";
+            $title = "Radical";
         }
         else
         {
-            $title = "Necromancer";
+            $title = "Free Spirit";
         }
     }
 
